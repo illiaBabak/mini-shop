@@ -1,0 +1,22 @@
+.main {
+  height: 100%;
+
+  .bar {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, rgba(253, 132, 45, 1) 4%, rgba(253, 179, 28, 1) 90%);
+    border-radius: 64px;
+  }
+
+  .items-wrapper {
+    top: 15%;
+    width: 100%;
+    height: 85%;
+    overflow: hidden scroll;
+  }
+
+  .items-wrapper::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
