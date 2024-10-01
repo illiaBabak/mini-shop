@@ -4,3 +4,16 @@
   height: 100vh;
   background-color: #ffebc1;
 }
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgba(253, 132, 45, 1) 4%, rgba(253, 179, 28, 1) 90%);
+}

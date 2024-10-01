@@ -1,0 +1,44 @@
+.cart {
+  background-color: #ffebc1;
+  border-radius: 4px;
+  cursor: default;
+
+  .items-wrapper {
+    width: 75%;
+    overflow: hidden scroll;
+  }
+
+  .cart-info {
+    width: 25%;
+
+    .close-btn {
+      width: 20px;
+      height: 20px;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.25s;
+      }
+    }
+
+    .confirm-btn {
+      background: linear-gradient(0deg, rgba(253, 132, 45, 1) 4%, rgba(253, 179, 28, 1) 90%);
+      color: #ffebc1;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.25s;
+      }
+
+      &.disabled {
+        filter: grayscale(50%);
+        pointer-events: none;
+      }
+    }
+  }
+}

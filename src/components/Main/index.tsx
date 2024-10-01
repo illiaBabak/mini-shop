@@ -29,7 +29,7 @@ export const Main = (): JSX.Element => {
         <h1 className='mt-3 fw-bolder'>Our goods</h1>
       </div>
 
-      <div className='items-wrapper d-flex flex-row align-items-start justify-content-center flex-wrap position-absolute'>
+      <div className='items-wrapper d-flex flex-row align-items-start justify-content-center flex-wrap position-absolute scroll-container'>
         {isLoadingItems ? <Loader /> : items.map((item, index) => <Item key={`item-${index}`} item={item} />)}
       </div>
     </div>
