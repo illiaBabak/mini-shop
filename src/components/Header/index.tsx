@@ -6,7 +6,9 @@ import { GlobalContext } from 'src/root';
 export const Header = (): JSX.Element => {
   const { setShouldShowCart } = useContext(GlobalContext);
   const price = useSelector((store: RootState) => store.cart.price);
-  const itemsCount = useSelector((store: RootState) => store.cart.items).length;
+  const itemsCount = useSelector((store: RootState) => store.cart.items)
+    .map((item) => item.count)
+    .reduce((acc, val) => acc + val, 0);
 
   return (
     <div className='header d-flex flex-row align-items-center justify-content-between'>

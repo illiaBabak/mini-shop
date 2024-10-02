@@ -7,4 +7,4 @@ export type ItemType = {
   image: string;
 };
 
-export type CartItemType = ItemType & { itemKey: string };
+export type CartItem = ItemType & { count: number };

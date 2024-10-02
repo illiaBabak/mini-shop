@@ -46,4 +46,21 @@
       white-space: nowrap;
     }
   }
+
+  .quantity {
+    bottom: 12px;
+
+    .count-btn {
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.33s;
+      }
+    }
+
+    .disabled {
+      pointer-events: none;
+    }
+  }
 }

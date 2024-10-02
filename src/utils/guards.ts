@@ -1,4 +1,4 @@
-import { CartItemType, ItemType } from 'src/types/dataTypes';
+import { ItemType } from 'src/types/dataTypes';
 
 const isString = (data: unknown): data is string => typeof data === 'string';
 
@@ -22,6 +22,3 @@ export const isItem = (data: unknown): data is ItemType =>
   isNumber(data.id);
 
 export const isItemArr = (data: unknown): data is ItemType[] => Array.isArray(data) && data.every((el) => isItem(el));
-
-export const isCartItem = (data: unknown): data is CartItemType =>
-  isItem(data) && 'itemKey' in data && isString(data.itemKey);

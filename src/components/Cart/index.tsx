@@ -32,7 +32,7 @@ export const Cart = (): JSX.Element => {
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <h1 className='mt-4'>Your cart</h1>
           <p className='mt-2 fs-5'>Price: ${price}</p>
-          <p className='fs-5'>Items: {items.length}</p>
+          <p className='fs-5'>Items: {items.map((item) => item.count).reduce((acc, val) => acc + val, 0)}</p>
         </div>
         <div
           onClick={() => dispatch(cartCleanUp())}
