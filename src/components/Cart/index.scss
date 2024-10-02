@@ -14,13 +14,21 @@
     .close-btn {
       width: 20px;
       height: 20px;
-      right: 0;
+      right: 12px;
       top: 0;
       cursor: pointer;
 
       &:hover {
         transform: scale(1.05);
         transition: 0.25s;
+      }
+    }
+
+    .catalog {
+      overflow: hidden scroll;
+
+      .catalog-item {
+        font-size: 14px;
       }
     }
 

@@ -14,7 +14,7 @@ export const Main = (): JSX.Element => {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch(`${BASE_URL}?limit=10`);
+      const response = await fetch(`${BASE_URL}`);
       dispatch(loadingItems());
       const data: unknown = await response.json();
 

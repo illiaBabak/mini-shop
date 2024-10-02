@@ -57,7 +57,7 @@ export const cartReducer = (state = initialState, action: CartAction): CartIniti
       const itemToRemove = state.items.find((item) => item.id === action.payload);
 
       return {
-        price: state.price - (itemToRemove ? itemToRemove.price * itemToRemove.count : 0),
+        price: Number((state.price - (itemToRemove ? itemToRemove.price * itemToRemove.count : 0)).toFixed(2)),
 
         items: state.items.filter((item) => item.id !== action.payload),
       };
