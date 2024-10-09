@@ -50,17 +50,25 @@
   .quantity {
     bottom: 12px;
 
-    .count-btn {
-      cursor: pointer;
+    .content-wrapper {
+      .count-btn {
+        user-select: none;
+        cursor: pointer;
 
-      &:hover {
-        transform: scale(1.1);
-        transition: 0.33s;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.33s;
+        }
       }
-    }
 
-    .disabled {
-      pointer-events: none;
+      &.disabled {
+        cursor: not-allowed;
+
+        .count-btn {
+          pointer-events: none;
+          opacity: 0.35;
+        }
+      }
     }
   }
 }

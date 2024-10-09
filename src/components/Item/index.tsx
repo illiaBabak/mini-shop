@@ -33,6 +33,11 @@ export const Item = ({ item }: Props): JSX.Element => {
   const handleRemoveItem = () => dispatch(cartRemoveItem(item.id));
 
   const handleDeleteClick = () => {
+    if (itemCount === 1) {
+      handleRemoveItem();
+      return;
+    }
+
     dispatch(cartSubstracktPrice(item.price));
     dispatch(cartDeleteItem(item.id));
   };
@@ -59,14 +64,15 @@ export const Item = ({ item }: Props): JSX.Element => {
       {!!(isItemInCart && itemCount && itemCount >= 0) && (
         <div className='quantity d-flex flex-row justify-content-center align-items-center position-absolute'>
           <div
-            className={`fs-3 count-btn ${shouldShowCart && itemCount === 1 ? 'disabled' : ''}`}
+            className={`fs-3 content-wrapper ${shouldShowCart && itemCount === 1 ? 'disabled' : ''}`}
             onClick={handleDeleteClick}
           >
-            -
+            <div className='count-btn'>-</div>
           </div>
           <p className='mx-2 my-0 fs-5'>{itemCount}</p>
-          <div className='fs-3 count-btn' onClick={handleAddClick}>
-            +
+
+          <div className='fs-3 content-wrapper' onClick={handleAddClick}>
+            <div className='count-btn'>+</div>
           </div>
         </div>
       )}

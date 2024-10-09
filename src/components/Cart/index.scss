@@ -5,7 +5,7 @@
 
   .items-wrapper {
     width: 75%;
-    overflow: hidden scroll;
+    overflow: hidden auto;
   }
 
   .cart-info {
@@ -25,7 +25,7 @@
     }
 
     .catalog {
-      overflow: hidden scroll;
+      overflow: hidden auto;
 
       .catalog-item {
         font-size: 14px;
@@ -44,8 +44,9 @@
       }
 
       &.disabled {
-        filter: grayscale(50%);
+        cursor: not-allowed;
         pointer-events: none;
+        opacity: 0.35;
       }
     }
   }
