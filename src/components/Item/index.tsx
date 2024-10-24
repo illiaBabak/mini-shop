@@ -30,11 +30,11 @@ export const Item = ({ item }: Props): JSX.Element => {
     dispatch(cartAddItem(item));
   };
 
-  const handleRemoveItem = () => dispatch(cartRemoveItem(item.id));
-
   const handleDeleteClick = () => {
+    if (shouldShowCart && itemCount === 1) return;
+
     if (itemCount === 1) {
-      handleRemoveItem();
+      dispatch(cartRemoveItem(item.id));
       return;
     }
 
@@ -46,7 +46,7 @@ export const Item = ({ item }: Props): JSX.Element => {
     <div className='item mx-4 my-3 d-flex flex-column align-items-center justify-content-center position-relative'>
       <div
         className='cart position-absolute d-flex justify-content-center align-items-center rounded-circle'
-        onClick={() => (isItemInCart && shouldShowCart ? handleRemoveItem() : handleAddClick())}
+        onClick={() => (isItemInCart && shouldShowCart ? dispatch(cartRemoveItem(item.id)) : handleAddClick())}
       >
         {isItemInCart && shouldShowCart ? (
           <p className='cart-icon d-flex justify-content-center align-items-center m-0 fs-1 fw-bolder'>x</p>
@@ -61,18 +61,19 @@ export const Item = ({ item }: Props): JSX.Element => {
         <p className='m-0 mb-1'>${item.price}</p>
       </div>
 
-      {!!(isItemInCart && itemCount && itemCount >= 0) && (
+      {!!(isItemInCart && itemCount) && (
         <div className='quantity d-flex flex-row justify-content-center align-items-center position-absolute'>
-          <div
-            className={`fs-3 content-wrapper ${shouldShowCart && itemCount === 1 ? 'disabled' : ''}`}
-            onClick={handleDeleteClick}
-          >
-            <div className='count-btn'>-</div>
+          <div className={`fs-3 content-wrapper ${shouldShowCart && itemCount === 1 ? 'disabled' : ''}`}>
+            <div className='count-btn' onClick={handleDeleteClick}>
+              -
+            </div>
           </div>
           <p className='mx-2 my-0 fs-5'>{itemCount}</p>
 
-          <div className='fs-3 content-wrapper' onClick={handleAddClick}>
-            <div className='count-btn'>+</div>
+          <div className='fs-3 content-wrapper'>
+            <div className='count-btn' onClick={handleAddClick}>
+              +
+            </div>
           </div>
         </div>
       )}

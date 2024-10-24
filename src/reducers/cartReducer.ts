@@ -21,13 +21,16 @@ export const initialState: CartInitialState = {
 
 export const cartReducer = (state = initialState, action: CartAction): CartInitialState => {
   switch (action.type) {
-    case CART_ADD_ITEM:
+    case CART_ADD_ITEM: {
+      const selectedItem = state.items.find((item) => item.id === action.payload.id);
+
       return {
         ...state,
-        items: state.items.find((item) => item.id === action.payload.id)
+        items: selectedItem
           ? state.items.map((item) => (item.id === action.payload.id ? { ...item, count: item.count + 1 } : item))
           : [...state.items, { ...action.payload, count: 1 }],
       };
+    }
 
     case CART_DELETE_ITEM:
       return {
