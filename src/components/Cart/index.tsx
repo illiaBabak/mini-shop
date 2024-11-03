@@ -12,6 +12,13 @@ export const Cart = (): JSX.Element => {
   const price = useSelector((state: RootState) => state.cart.price);
   const dispatch = useDispatch();
 
+  const handlePurchase = () => {
+    if (!items.length) return;
+
+    dispatch(cartCleanUp());
+    setShouldShowCart(false);
+  };
+
   return (
     <div
       className='cart d-flex flex-row justify-content-center align-items-center w-75 h-75 py-3 px-1'
@@ -32,7 +39,7 @@ export const Cart = (): JSX.Element => {
         <div className='d-flex flex-column justify-content-start align-items-center h-75'>
           <h1 className='mt-4'>Your cart</h1>
           <p className='mt-2 fs-5'>Price: ${price}</p>
-          <p className='fs-5'>Items: {items.map((item) => item.count).reduce((acc, val) => acc + val, 0)}</p>
+          <p className='fs-5'>Items: {items.map((item) => item.count).reduce((acc = 0, val = 0) => acc + val, 0)}</p>
 
           <div className='catalog d-flex flex-column justify-content-start align-items-center text-center mt-2 px-4 w-100 h-75 scroll-container'>
             {items.map((item, index) => (
@@ -42,11 +49,13 @@ export const Cart = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <div
-          onClick={() => dispatch(cartCleanUp())}
-          className={`confirm-btn d-flex justify-content-center align-items-center mb-3 p-2 ${!items.length ? 'disabled' : ''}`}
-        >
-          Confirm purchase
+        <div className={`confirm-btn-wrapper ${!items.length ? 'disabled' : ''}`}>
+          <div
+            onClick={handlePurchase}
+            className='confirm-btn d-flex justify-content-center align-items-center mb-3 p-2'
+          >
+            Confirm purchase
+          </div>
         </div>
       </div>
     </div>

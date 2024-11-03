@@ -8,7 +8,7 @@ export const Header = (): JSX.Element => {
   const price = useSelector((store: RootState) => store.cart.price);
   const itemsCount = useSelector((store: RootState) => store.cart.items)
     .map((item) => item.count)
-    .reduce((acc, val) => acc + val, 0);
+    .reduce((acc = 0, val = 0) => acc + val, 0);
 
   return (
     <div className='header d-flex flex-row align-items-center justify-content-between'>
@@ -19,7 +19,7 @@ export const Header = (): JSX.Element => {
           className='cart position-relative d-flex justify-content-center align-items-center rounded-circle'
           onClick={() => setShouldShowCart(true)}
         >
-          <img src='src/images/cart.png' alt='cart' className='cart-icon object-fit-contain' />
+          <img src='/cart.png' alt='cart' className='cart-icon object-fit-contain' />
           <p className='counter d-flex justify-content-center align-items-center rounded-circle position-absolute m-0 fw-bolder'>
             {itemsCount}
           </p>

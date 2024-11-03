@@ -1,4 +1,4 @@
-import { ItemType } from 'src/types/dataTypes';
+import { ItemType } from 'src/types';
 
 export const LOADING_ITEMS = 'LOADING_ITEMS';
 export const SAVE_ITEMS = 'SAVE_ITEMS';

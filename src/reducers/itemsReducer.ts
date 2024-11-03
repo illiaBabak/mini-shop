@@ -1,5 +1,5 @@
 import { ItemAction, LOADING_ITEMS, SAVE_ITEMS } from 'src/actions/itemsActions';
-import { ItemType } from 'src/types/dataTypes';
+import { ItemType } from 'src/types';
 
 export type ItemsInitialState = {
   items: ItemType[];

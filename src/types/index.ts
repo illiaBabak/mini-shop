@@ -5,6 +5,5 @@ export type ItemType = {
   description: string;
   price: number;
   image: string;
+  count: number | undefined;
 };
-
-export type CartItem = ItemType & { count: number };

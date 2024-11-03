@@ -1,4 +1,4 @@
-import { ItemType } from 'src/types/dataTypes';
+import { ItemType } from 'src/types';
 
 const isString = (data: unknown): data is string => typeof data === 'string';
 

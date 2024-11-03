@@ -1,17 +1,9 @@
-import {
-  CART_ADD_ITEM,
-  CART_ADD_PRICE,
-  CART_CLEAN_UP,
-  CART_DELETE_ITEM,
-  CART_REMOVE_ITEM,
-  CART_SUBSTRACKT_PRICE,
-  CartAction,
-} from 'src/actions/cartActions';
-import { CartItem } from 'src/types/dataTypes';
+import { CART_ADD_ITEM, CART_CLEAN_UP, CART_DELETE_ITEM, CART_REMOVE_ITEM, CartAction } from 'src/actions/cartActions';
+import { ItemType } from 'src/types';
 
 export type CartInitialState = {
   price: number;
-  items: CartItem[];
+  items: ItemType[];
 };
 
 export const initialState: CartInitialState = {
@@ -25,29 +17,21 @@ export const cartReducer = (state = initialState, action: CartAction): CartIniti
       const selectedItem = state.items.find((item) => item.id === action.payload.id);
 
       return {
-        ...state,
+        price: Number((state.price + action.payload.price).toFixed(2)),
         items: selectedItem
-          ? state.items.map((item) => (item.id === action.payload.id ? { ...item, count: item.count + 1 } : item))
+          ? state.items.map((item) =>
+              item.id === action.payload.id ? { ...item, count: (item.count ?? 0) + 1 } : item
+            )
           : [...state.items, { ...action.payload, count: 1 }],
       };
     }
 
     case CART_DELETE_ITEM:
       return {
-        ...state,
-        items: state.items.map((item) => (item.id === action.payload ? { ...item, count: item.count - 1 } : item)),
-      };
-
-    case CART_ADD_PRICE:
-      return {
-        ...state,
-        price: Number((state.price + action.payload).toFixed(2)),
-      };
-
-    case CART_SUBSTRACKT_PRICE:
-      return {
-        ...state,
-        price: Number((state.price - action.payload).toFixed(2)),
+        price: Number((state.price - action.payload.price).toFixed(2)),
+        items: state.items.map((item) =>
+          item.id === action.payload.id ? { ...item, count: (item.count ?? 0) - 1 } : item
+        ),
       };
 
     case CART_CLEAN_UP:
@@ -57,12 +41,11 @@ export const cartReducer = (state = initialState, action: CartAction): CartIniti
       };
 
     case CART_REMOVE_ITEM: {
-      const itemToRemove = state.items.find((item) => item.id === action.payload);
+      const { price, id, count = 1 } = action.payload;
 
       return {
-        price: Number((state.price - (itemToRemove ? itemToRemove.price * itemToRemove.count : 0)).toFixed(2)),
-
-        items: state.items.filter((item) => item.id !== action.payload),
+        price: Number((state.price - price * count).toFixed(2)),
+        items: state.items.filter((item) => item.id !== id),
       };
     }
 

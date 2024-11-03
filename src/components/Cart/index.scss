@@ -32,21 +32,26 @@
       }
     }
 
-    .confirm-btn {
-      background: linear-gradient(0deg, rgba(253, 132, 45, 1) 4%, rgba(253, 179, 28, 1) 90%);
-      color: #ffebc1;
-      border-radius: 4px;
-      cursor: pointer;
+    .confirm-btn-wrapper {
+      .confirm-btn {
+        background: linear-gradient(0deg, rgba(253, 132, 45, 1) 4%, rgba(253, 179, 28, 1) 90%);
+        color: #ffebc1;
+        border-radius: 4px;
+        cursor: pointer;
 
-      &:hover {
-        transform: scale(1.05);
-        transition: 0.25s;
+        &:hover {
+          transform: scale(1.05);
+          transition: 0.25s;
+        }
       }
 
       &.disabled {
         cursor: not-allowed;
-        pointer-events: none;
         opacity: 0.35;
+
+        .confirm-btn {
+          pointer-events: none;
+        }
       }
     }
   }
