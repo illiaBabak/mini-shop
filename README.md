@@ -1,27 +1,45 @@
-# vite-template-redux
+<div align="center">
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+# Technological stack
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
+This project was written in React (class components) using TypeScript, Vite and Redux (legacy)
 
-## Goals
+<img src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png" alt="React" width="75" height="75" style="object-fit: cover;">
+<img src="https://cdn-images-1.medium.com/max/1600/1*Vo5RDpNkOsfDn8sx06mthA.png" alt="Redux" width="75" height="75" style="object-fit: cover;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" alt="Vite" width="75" height="75" style="object-fit: cover">
+<img src="https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png" alt="TypeScript" width="75" height="75" style="object-fit: cover;">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968358.png" alt="SCSS" width="75" height="75" style="object-fit: cover;">
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+# Mini shop
 
-## Scripts
+This web application is written to learn how to work with react class components and redux (legacy)
 
+![Items](https://docs.google.com/uc?id=1gMgXzqU5gTrVsq8560KfGVrtQfrWR1yt)
+
+<i>Items</i>
+
+![Cart](https://docs.google.com/uc?id=1xeqwO7Y_zfrVcQW-Zj5iA4feB2S6W0oH)
+
+<i>Cart</i>
+
+## Operations that can be performed
+
+<p>Show items</p>
+<p>Added items to cart</p>
+<p>Shopping emulation</p>
+
+# pnpm scripts
+
+- `i` - to install all packages
 - `dev`/`start` - start dev server and open browser
 - `build` - build for production
 - `preview` - locally preview production build
 - `test` - launch test runner
 
-## Inspiration
+To run this project locally you need tsconfig.json, tsconfig.node.json, .prettierrc and .eclintrc
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+# Link to try a project
+
+https://illiababak.github.io/mini-shop/
+
+</div>
