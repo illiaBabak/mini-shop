@@ -42,7 +42,7 @@ export const Item = ({ item }: Props): JSX.Element => {
         {shouldShowDeleteBtn ? (
           <p className='cart-icon d-flex justify-content-center align-items-center m-0 fs-1 fw-bolder'>x</p>
         ) : (
-          <img src='/cart.png' alt='cart' className='cart-icon object-fit-cover' />
+          <img src='/mini-shop/cart.png' alt='cart' className='cart-icon object-fit-cover' />
         )}
       </div>
 

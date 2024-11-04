@@ -19,7 +19,7 @@ export const Header = (): JSX.Element => {
           className='cart position-relative d-flex justify-content-center align-items-center rounded-circle'
           onClick={() => setShouldShowCart(true)}
         >
-          <img src='/cart.png' alt='cart' className='cart-icon object-fit-contain' />
+          <img src='/mini-shop/cart.png' alt='cart' className='cart-icon object-fit-contain' />
           <p className='counter d-flex justify-content-center align-items-center rounded-circle position-absolute m-0 fw-bolder'>
             {itemsCount}
           </p>
