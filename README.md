@@ -12,7 +12,7 @@ This project was written in React (class components) using TypeScript, Vite and 
 
 # Mini shop
 
-This web application is written to learn how to work with react class components and redux (legacy)
+This web application is written to learn how to work with legacy redux
 
 ![Items](https://docs.google.com/uc?id=1gMgXzqU5gTrVsq8560KfGVrtQfrWR1yt)
 
