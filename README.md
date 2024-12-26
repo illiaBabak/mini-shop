@@ -2,7 +2,7 @@
 
 # Technological stack
 
-This project was written in React (class components) using TypeScript, Vite and Redux (legacy)
+This project was written in React using TypeScript, Vite and Redux (legacy)
 
 <img src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png" alt="React" width="75" height="75" style="object-fit: cover;">
 <img src="https://cdn-images-1.medium.com/max/1600/1*Vo5RDpNkOsfDn8sx06mthA.png" alt="Redux" width="75" height="75" style="object-fit: cover;">
